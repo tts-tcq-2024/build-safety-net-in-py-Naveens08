@@ -52,6 +52,10 @@ class TestSoundex(unittest.TestCase):
     def test_process_characters(self):
         self.assertEqual(process_characters('Robert'), 'R163')
         self.assertEqual(process_characters('Rupert'), 'R163')
+        self.assertEqual(process_characters('Ashcraft'), 'A261')
+        self.assertEqual(process_characters('Tymczak'), 'T522')
+        self.assertEqual(process_characters('Pfister'), 'P236')
+        self.assertEqual(process_characters('Honeyman'), 'H555')
 
     def test_process_character(self):
         self.assertEqual(process_character('A', 'B', '0'), ('A1', '1'))
