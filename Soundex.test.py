@@ -57,6 +57,10 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(process_character('A', 'B', '0'), ('A1', '1'))
         self.assertEqual(process_character('A', 'A', '0'), ('A', '0'))
         self.assertEqual(process_character('A', 'B', '1'), ('A', '1'))
+
+    def test_generate_soundex(self):
+        self.assertEqual(generate_soundex('Robert'), 'R163')
+        self.assertEqual(generate_soundex('Rupert'), 'R163')
         
 if __name__ == '__main__':
     unittest.main()
