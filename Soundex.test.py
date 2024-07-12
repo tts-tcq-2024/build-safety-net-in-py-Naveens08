@@ -44,10 +44,10 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(if_append("A", "A"), False)
 
     def test_get_soundex_code(self):
-        self.assertEqual(get_soundex_code("M"), 5)
-        self.assertEqual(get_soundex_code("1"), 0)
-        self.assertEqual(get_soundex_code("a"), 0)
-        self.assertEqual(get_soundex_code("r"), 6)
+        self.assertEqual(get_soundex_code("M"), '5')
+        self.assertEqual(get_soundex_code("1"), '0')
+        self.assertEqual(get_soundex_code("a"), '0')
+        self.assertEqual(get_soundex_code("r"), '6')
 
     def test_process_characters(self):
         self.assertEqual(process_characters('Robert'), 'R163')
