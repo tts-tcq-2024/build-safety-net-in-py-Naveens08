@@ -15,7 +15,7 @@ def check_for_null_inputs(name):
         	return ""
 
 def add_padding_to_code(code, padding_char, length):
-    return code.ljust(lenght, padding_char)
+    return code.ljust(length, padding_char)
 
 def if_break(soundex):
     return len(soundex) == 4
