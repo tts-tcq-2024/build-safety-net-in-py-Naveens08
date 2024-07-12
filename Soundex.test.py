@@ -1,5 +1,7 @@
 import unittest
 from Soundex import generate_soundex
+from Soundex import add_padding_to_code
+from Soundex import if_break
 
 class TestSoundex(unittest.TestCase):
 
