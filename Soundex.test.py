@@ -19,6 +19,13 @@ class TestSoundex(unittest.TestCase):
 
     def test_four_characters(self):
         self.assertEqual(generate_soundex("ZMNZ"), "Z520")
+
+    def test_padding(self):
+        self.assertEqual(add_padding_to_code("AB", '0', 4), "AB00")
+
+    def test_if_break(self):
+        self.assertEqual(if_break("A100"), True)
+        self.assertEqual(if_break("A1"), False)
     
 if __name__ == '__main__':
     unittest.main()
