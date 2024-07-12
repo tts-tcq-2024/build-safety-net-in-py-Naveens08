@@ -10,10 +10,6 @@ def get_soundex_code(c):
     }
     return mapping.get(c, '0')  # Default to '0' for non-mapped characters
 
-def check_for_null_inputs(name):
-	if not name:
-        	return ""
-
 def add_padding_to_code(code, padding_char, length):
     return code.ljust(length, padding_char)
 
@@ -48,5 +44,8 @@ def process_characters(name):
     return ''.join(soundex)
 
 def generate_soundex(name):
+    if not name:
+    	return ""
+    	
     processed_soundex = process_characters(name)
     return add_padding_to_code(processed_soundex, '0', 4)
