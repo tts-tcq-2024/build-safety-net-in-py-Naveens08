@@ -2,6 +2,8 @@ import unittest
 from Soundex import generate_soundex
 from Soundex import add_padding_to_code
 from Soundex import if_break
+from Soundex import if_continue
+from Soundex import if_append
 
 class TestSoundex(unittest.TestCase):
 
@@ -24,10 +26,19 @@ class TestSoundex(unittest.TestCase):
 
     def test_padding(self):
         self.assertEqual(add_padding_to_code("AB", '0', 4), "AB00")
+        self.assertEqual(add_padding_to_code("A123", '0', 4), "A123")
 
     def test_if_break(self):
         self.assertEqual(if_break("A100"), True)
         self.assertEqual(if_break("A1"), False)
-    
+
+    def test_if_continue(self):
+        self.assertEqual(if_continue("0"), True)
+        self.assertEqual(if_continue("A"), False)
+
+    def test_if_append(self):
+        self.assertEqual(if_append("0", "A"), True)
+        self.assertEqual(if_append("A", "A"), False)
+
 if __name__ == '__main__':
     unittest.main()
