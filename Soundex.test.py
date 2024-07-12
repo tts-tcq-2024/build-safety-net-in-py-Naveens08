@@ -4,6 +4,9 @@ from Soundex import add_padding_to_code
 from Soundex import if_break
 from Soundex import if_continue
 from Soundex import if_append
+from Soundex import get_soundex_code
+from Soundex import process_characters
+from Soundex import process_character
 
 class TestSoundex(unittest.TestCase):
 
@@ -39,6 +42,19 @@ class TestSoundex(unittest.TestCase):
     def test_if_append(self):
         self.assertEqual(if_append("0", "A"), True)
         self.assertEqual(if_append("A", "A"), False)
+
+    def test_get_soundex_code(self):
+        self.assertEqual(get_soundex_code("M"), 5)
+        self.assertEqual(get_soundex_code("1"), 0)
+        self.assertEqual(get_soundex_code("a"), 0)
+        self.assertEqual(get_soundex_code("r"), 6)
+
+    def test_process_characters(self):
+        self.assertEqual(process_characters('Robert'), 'R163')
+        self.assertEqual(process_characters('Rupert'), 'R163')
+
+    def test_process_character(self):
+        self.assertEqual(process_character('A', 'B', '0'), ('A1', '1'))
 
 if __name__ == '__main__':
     unittest.main()
