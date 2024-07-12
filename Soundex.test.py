@@ -56,6 +56,7 @@ class TestSoundex(unittest.TestCase):
     def test_process_character(self):
         self.assertEqual(process_character('A', 'B', '0'), ('A1', '1'))
         self.assertEqual(process_character('A', 'A', '0'), ('A', '0'))
-
+        self.assertEqual(process_character('A', 'B', '1'), ('A', '1'))
+        
 if __name__ == '__main__':
     unittest.main()
