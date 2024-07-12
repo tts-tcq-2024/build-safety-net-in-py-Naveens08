@@ -12,7 +12,7 @@ def get_soundex_code(c):
 
 def check_for_null_inputs(name):
 	if not name:
-        return ""
+        	return ""
 
 def add_padding_to_code(code, padding_char, length):
     return code.ljust(lenght, padding_char)
